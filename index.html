@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Handframe · AI Video Studio, Dehradun</title>
+<meta name="description" content="Handframe is a small team in Dehradun that crafts AI with our hands: cinematic AI video ads, reels and brand films for hotels, cafes, real estate and events.">
+<meta name="theme-color" content="#0b0a17">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Handframe · AI Video Studio, Dehradun">
+<meta property="og:description" content="We craft AI with our hands. Cinematic video ads and brand films, made from your real photos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0a17;--chalk:#f6f1e7;--muted:#b9b3d1;--line:#3a3160;--coral:#ff6b8b;--amber:#ffc857;--teal:#4de1d0;--violet:#9a7bff;--ink:#2a2238;
+ --mk:"Permanent Marker","Comic Sans MS",cursive;--pen:"Patrick Hand","Comic Sans MS",cursive;
+ color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;color:var(--chalk);font:400 24px/1.35 var(--pen);font-synthesis:none;overflow-x:hidden;
+ background:var(--bg) radial-gradient(rgba(246,241,231,.09) 1.5px,transparent 1.6px) 0 0/30px 30px}
+h1,h2,h3{font-family:var(--mk);font-weight:400;line-height:1.02;margin:0}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+section{padding:110px 0;position:relative}
+h2{font-size:clamp(34px,6vw,80px);max-width:16ch}
+h2::after{content:"";display:block;width:170px;height:16px;margin-top:12px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='16'><path d='M3 9 Q 22 0 42 9 T 84 9 T 126 9 T 167 8' stroke='%23ff6b8b' stroke-width='4' fill='none' stroke-linecap='round'/></svg>") no-repeat;clip-path:inset(0 100% 0 0);transition:clip-path 1.2s 1s cubic-bezier(.6,0,.2,1)}
+h2.in::after,html:not(.js) h2::after{clip-path:inset(0)}
+.lead{color:var(--muted);max-width:30em;margin:22px 0 0;font-size:27px}
+.prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:6px;width:calc(var(--p,0)*100%);z-index:60;border-radius:0 6px 6px 0;background:linear-gradient(90deg,var(--coral),var(--amber),var(--teal))}
+
+/* written-in text */
+.js [data-w] i{display:inline-block;font-style:normal;opacity:0;transform:translateY(.4em) rotate(calc(var(--r)*3)) scale(.7)}
+.js [data-w].in i{animation:wr .55s cubic-bezier(.3,1.6,.5,1) forwards;animation-delay:calc(var(--k)*var(--st,30ms))}
+[data-w=w]{--st:48ms}
+@keyframes wr{to{opacity:1;transform:translateY(var(--y)) rotate(var(--r))}}
+.wd{display:inline-block;white-space:nowrap}
+mark{color:inherit;padding:0 .2em;background:linear-gradient(100deg,rgba(255,200,87,.6),rgba(255,107,139,.5)) no-repeat 0 90%/0 .5em;transition:background-size 1s 1.1s}
+.in mark{background-size:100% .5em}
+.js .rv{opacity:0;translate:0 60px;transition:opacity .8s,translate .9s cubic-bezier(.3,1.4,.5,1),rotate .35s;transition-delay:calc(var(--d,0)*120ms)}
+.js .rv.in{opacity:1;translate:0 0}
+.rv{rotate:var(--rt,0deg)}
+
+/* shared art */
+.art{fill:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;filter:url(#rough);overflow:visible}
+.js .dr *{stroke-dasharray:1;stroke-dashoffset:1}
+.js .hero .dr *,.js .in .dr *{animation:draw 1.8s cubic-bezier(.5,0,.2,1) forwards;animation-delay:calc(var(--n,0)*.09s + .5s)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.c1{stroke:var(--coral)}.c2{stroke:var(--amber)}.c3{stroke:var(--teal)}.c4{stroke:var(--violet)}.c5{stroke:var(--chalk)}
+.tw{transform-box:fill-box;transform-origin:center;animation:tw 2.6s ease-in-out infinite}
+@keyframes tw{50%{opacity:.2;transform:scale(.6) rotate(25deg)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 6s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes fade{from{opacity:0;translate:0 16px}}
+.deco{display:none;position:absolute;z-index:0;width:60px;height:60px;fill:none;stroke:var(--c,var(--amber));stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;translate:0 calc(var(--sy,0)*var(--sp,-.05)*1px);animation:sp 18s linear infinite;pointer-events:none;opacity:.8}
+.tp::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:30px;margin-left:-48px;background:rgba(255,236,160,.8);rotate:-4deg;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+
+/* hero */
+.hero{min-height:100vh;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:auto 1fr auto;column-gap:30px;padding-inline:max(24px,calc(50% - 560px));--mx:50%;--my:40%}
+.spot{position:absolute;inset:0;background:radial-gradient(460px circle at var(--mx) var(--my),rgba(255,107,139,.2),rgba(154,123,255,.14) 40%,rgba(77,225,208,.1) 62%,transparent 74%);pointer-events:none}
+.nav{position:relative;z-index:3;grid-column:1/-1;grid-row:1;display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.nav b{font:400 28px var(--mk);rotate:-2deg}
+.nav a{margin-left:26px;text-decoration:none;color:var(--muted);font-size:24px;transition:color .2s,rotate .2s;display:inline-block}
+.nav a:hover{color:var(--amber);rotate:-4deg}
+.hero-body{position:relative;z-index:3;grid-column:1;grid-row:2;align-self:center;padding:20px 0 50px;min-width:0}
+.tag{display:inline-block;position:relative;background:#fff3b0;color:var(--ink);padding:8px 22px;font-size:25px;rotate:-3deg;box-shadow:3px 5px 0 rgba(0,0,0,.4);animation:fade .9s .1s both}
+.hero h1{font-size:clamp(40px,6.4vw,92px);margin-top:34px}
+.hero p{max-width:19em;margin:26px 0 0;font-size:29px;color:#d6d1ea}
+.btns{display:flex;gap:34px;flex-wrap:wrap;margin-top:36px;align-items:center}
+.btn{display:inline-block;padding:15px 30px;text-decoration:none;font:400 24px/1 var(--mk);border-radius:14px 22px 12px 24px/22px 12px 24px 14px;transition:translate .25s,rotate .25s,box-shadow .25s;rotate:-1.5deg}
+.btn.fill{background:var(--coral);color:#25091a;box-shadow:4px 5px 0 #000}
+.btn.fill:hover{translate:-2px -4px;rotate:1.5deg;box-shadow:7px 9px 0 #000}
+.btn.line{border:3px dashed var(--teal);color:var(--teal)}
+.btn.line:hover{rotate:2deg;background:rgba(77,225,208,.12)}
+.hero-art{position:relative;z-index:2;grid-column:2;grid-row:2;align-self:center;justify-self:center;width:100%;max-width:520px;animation:float 7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes float{to{translate:0 -16px}}
+.hw{font:400 38px var(--mk);fill:var(--amber);stroke:none;animation:fade 1.2s 3.6s both}
+.late{animation:fade 1s 3s both}
+.cloud{animation:cl 12s ease-in-out infinite alternate}@keyframes cl{to{translate:50px 0}}
+.bird{animation:bd 11s linear infinite;animation-delay:var(--bd,0s)}@keyframes bd{from{translate:-60px 0}to{translate:580px -50px}}
+.tc{grid-column:1/-1;grid-row:3;position:relative;z-index:3;text-align:right;padding:0 0 14px;font-size:21px;color:var(--muted)}
+.strip{position:relative;height:76px;background:#120f26;border-block:2px solid #2b2350;overflow:hidden}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:9px;background:repeating-linear-gradient(90deg,transparent 0 12px,var(--bg) 12px 28px)}
+.strip::before{top:6px}.strip::after{bottom:6px}
+.strip div{position:absolute;inset:20px 0;width:200%;border-radius:4px;opacity:.85;animation:film 14s linear infinite;background:repeating-linear-gradient(90deg,var(--coral) 0 70px,transparent 70px 80px,var(--teal) 80px 150px,transparent 150px 160px,var(--amber) 160px 230px,transparent 230px 240px,var(--violet) 240px 310px,transparent 310px 320px)}
+@keyframes film{to{translate:-640px 0}}
+
+/* sticky notes */
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:70px}
+.note{position:relative;background:var(--p);color:var(--ink);padding:38px 30px 32px;box-shadow:6px 10px 0 rgba(0,0,0,.45);border-radius:3px 3px 40px 3px}
+.note:hover{rotate:0deg;translate:0 -10px}
+.note h3{font-size:36px;margin-bottom:10px}
+.note p{margin:0;font-size:25px}
+.ic{width:74px;height:74px;display:block;margin-bottom:12px;stroke:var(--ink)}
+
+/* polaroids */
+.scrawl{position:static;display:flex;flex-direction:column;align-items:flex-start;margin-top:30px;color:var(--amber);font:400 30px/1 var(--mk);rotate:-3deg;text-align:left}
+.scrawl svg{width:90px;height:70px;stroke:var(--amber)}
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:46px 34px;margin-top:70px}
+.pol{position:relative;background:#f8f4ea;color:var(--ink);padding:14px 14px 20px;border-radius:4px;box-shadow:0 18px 40px -12px #000}
+.pol:hover{transform:perspective(800px) rotateX(var(--ty,0deg)) rotateY(var(--tx,0deg)) translateY(-6px);z-index:3}
+@keyframes wig{25%{rotate:calc(var(--rt) - 3deg)}75%{rotate:calc(var(--rt) + 3deg)}}
+.poster{aspect-ratio:1;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:12px;color:#fff;font-size:20px}
+.poster::before{content:"";position:absolute;inset:-30%;background:var(--g);background-size:200% 200%;animation:pan 9s ease-in-out infinite alternate;transition:transform .8s}
+.pol:hover .poster::before{transform:scale(1.2) rotate(4deg)}
+@keyframes pan{to{background-position:100% 100%}}
+.poster span{position:relative;align-self:flex-start;background:rgba(11,10,23,.6);padding:2px 12px;border-radius:99px}
+.play{position:relative;width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;align-self:flex-end;transition:transform .35s,background .35s}
+.play::before{content:"";border-left:15px solid #fff;border-block:9px solid transparent;margin-left:4px}
+.pol:hover .play{transform:scale(1.2);background:var(--coral)}
+.pol h3{font-size:30px;margin:14px 0 2px}.pol p{margin:0;font-size:23px;line-height:1.15}
+.g1{--g:linear-gradient(135deg,#2a1b6e,#ff6b8b 55%,#ffc857)}.g2{--g:linear-gradient(135deg,#0d3b46,#4de1d0 60%,#c8ffd9)}.g3{--g:linear-gradient(135deg,#3a0f5c,#9a7bff 55%,#ff9ad5)}
+.g4{--g:linear-gradient(135deg,#5a1230,#ff6b8b 50%,#ffd479)}.g5{--g:linear-gradient(135deg,#101a4d,#4a7bff 55%,#4de1d0)}.g6{--g:linear-gradient(135deg,#2c1a07,#ffc857 55%,#ff6b8b)}
+.note-s{margin-top:54px;font-size:25px;color:var(--muted);border-left:4px dashed var(--coral);padding-left:18px;max-width:28em}
+
+/* proof */
+.proof{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);gap:20px;align-items:center;margin-top:70px}
+.refs{display:flex;justify-content:center}
+.mp:first-child{margin-left:0!important}.mp{position:relative;width:112px;height:132px;background:#f8f4ea;padding:9px;margin-left:-30px;box-shadow:0 10px 24px -8px #000;transition:transform .7s cubic-bezier(.3,1.5,.5,1);transform:translateY(-80px) scale(.4);opacity:0;transition-delay:calc(var(--k)*160ms)}
+.mp i{display:block;height:100%;background:var(--c)}
+.in .mp{transform:none;opacity:1}
+.mid{width:100%}.hw2{font:400 30px var(--mk);fill:var(--amber);stroke:none}
+.tv{position:relative;border:5px solid var(--chalk);border-radius:22px 16px 24px 14px;padding:10px;background:#120f26;rotate:1.5deg}
+.tv::after{content:"";position:absolute;left:30%;right:30%;bottom:-22px;height:14px;border-bottom:5px solid var(--chalk);border-inline:5px solid var(--chalk)}
+.final{aspect-ratio:16/10;border-radius:8px;position:relative;overflow:hidden;background:linear-gradient(135deg,#2a1b6e,#ff6b8b 55%,#ffc857);background-size:200% 200%;animation:pan 6s ease-in-out infinite alternate;clip-path:inset(0 100% 0 0);transition:clip-path 1.2s 1.6s cubic-bezier(.7,0,.2,1)}
+.in .final{clip-path:inset(0)}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.4) 50%,transparent 65%);translate:-120% 0;animation:swp 3.8s 3s ease-in-out infinite}
+@keyframes swp{to{translate:120% 0}}
+.cap{text-align:center;color:var(--muted);font-size:24px;margin-top:38px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:70px}
+.plan{position:relative;padding:36px 30px;border:3px dashed var(--line);border-radius:24px 14px 28px 12px/14px 26px 12px 28px;background:rgba(18,15,38,.7);transition:border-color .3s,translate .3s,rotate .3s}
+.plan:hover{border-color:var(--amber);translate:0 -10px;rotate:0deg}
+.plan h3{font-size:38px}
+.plan .p{font:400 46px/1.1 var(--mk);margin:14px 0 18px;color:var(--amber)}
+.plan ul{list-style:none;margin:0;padding:0}
+.plan li{margin:8px 0;font-size:25px;padding-left:34px;position:relative}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--teal);font:400 28px var(--mk)}
+.stk{position:absolute;top:-24px;right:-12px;rotate:8deg;background:var(--amber);color:#2a1500;font:400 26px/1 var(--mk);padding:9px 18px;border-radius:12px 20px 10px 22px;box-shadow:3px 4px 0 rgba(0,0,0,.5)}
+.small{color:var(--muted);font-size:24px;margin-top:34px;max-width:32em}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:80px;position:relative}
+.wave{position:absolute;left:0;top:8px;width:100%;height:40px}
+.num{position:relative;display:grid;place-items:center;width:58px;height:58px;border-radius:50% 46% 52% 48%;background:var(--bg);border:3px solid var(--c);color:var(--c);font:400 30px var(--mk);transform:scale(0);transition:transform .6s cubic-bezier(.3,1.7,.5,1);transition-delay:calc(var(--k)*420ms + 400ms)}
+.in .num{transform:rotate(-6deg)}
+.steps h3{font-size:34px;margin:18px 0 6px}.steps p{margin:0;font-size:24px;color:var(--muted)}
+
+/* about */
+
+/* contact */
+.contact{text-align:center;overflow:hidden}
+.contact h2{margin-inline:auto;max-width:16ch}.contact h2::after{margin-inline:auto}.contact .lead{margin-inline:auto}
+.contact .btns{justify-content:center;margin-top:44px}
+.cta{position:relative;display:inline-block;padding:14px 26px}
+.cta .ring{position:absolute;inset:-6px -4px;width:calc(100% + 8px);height:calc(100% + 12px)}
+.cta .ptr{display:none}
+.fly{position:absolute;left:0;top:26px;width:110px;opacity:.7;animation:fly 16s linear infinite}
+.fly.b{top:auto;bottom:26px;width:76px;animation-duration:22s;animation-delay:-9s}
+@keyframes fly{0%{translate:-160px 10px;rotate:10deg}30%{translate:30vw -8px;rotate:-12deg}60%{translate:60vw 12px;rotate:12deg}100%{translate:110vw -6px;rotate:-8deg}}
+footer{padding:36px 24px;border-top:3px dashed var(--line);color:var(--muted);text-align:center;font-size:24px}
+.dust{position:fixed;width:7px;height:7px;border-radius:50%;pointer-events:none;z-index:70;animation:dust .9s forwards}
+@keyframes dust{to{opacity:0;translate:var(--dx) 44px;scale:.2}}
+
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+/* cursor colour glow */
+.glow{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;transition:opacity .5s;filter:blur(55px);mix-blend-mode:screen;background:conic-gradient(var(--coral),var(--amber),var(--teal),var(--violet),var(--coral));animation:sp 9s linear infinite;translate:var(--gx,0px) var(--gy,0px)}
+.glow.on{opacity:.3}
+.hv::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(250px circle at var(--x,50%) var(--y,50%),rgba(255,107,139,.5),rgba(255,200,87,.35) 35%,rgba(77,225,208,.28) 62%,transparent 78%)}
+.hv:hover::after{opacity:1}
+.js .pol.rv{transition:opacity .8s,translate .9s cubic-bezier(.3,1.4,.5,1),rotate .35s,transform .18s}
+.btn.fill{background:linear-gradient(110deg,var(--coral),var(--amber),var(--teal),var(--violet));background-size:300% 100%;background-position:0 0;transition:background-position .7s,translate .25s,rotate .25s,box-shadow .25s}
+.btn.fill:hover{background-position:100% 0}
+.btn.line:hover{background:linear-gradient(110deg,rgba(77,225,208,.3),rgba(154,123,255,.3))}
+.plan{isolation:isolate;background:#120f26}
+.plan::before{content:"";position:absolute;inset:-4px;border-radius:inherit;z-index:-1;opacity:0;transition:opacity .4s;background:conic-gradient(from var(--a),var(--coral),var(--amber),var(--teal),var(--violet),var(--coral));animation:sp2 4s linear infinite}
+.plan:hover::before{opacity:1}
+@keyframes sp2{to{--a:360deg}}
+h1 i,h2 i{transition:color .25s,translate .25s}
+h1 i:nth-child(4n+1),h2 i:nth-child(4n+1){--hc:var(--coral)}h1 i:nth-child(4n+2),h2 i:nth-child(4n+2){--hc:var(--amber)}h1 i:nth-child(4n+3),h2 i:nth-child(4n+3){--hc:var(--teal)}h1 i:nth-child(4n+4),h2 i:nth-child(4n+4){--hc:var(--violet)}
+h1 i:hover,h2 i:hover{color:var(--hc,var(--amber));translate:0 -.14em}
+.hero-art{transform:translate(calc(var(--nx,0)*-14px),calc(var(--ny,0)*-10px));transition:transform .25s ease-out}
+.nav b{display:flex;align-items:center}.logo{width:38px;height:38px;margin-right:8px;stroke-width:3;flex:none}
+.ribbon{margin:10px -20px;rotate:-2deg;padding:14px 0;overflow:hidden;background:linear-gradient(100deg,var(--coral),var(--amber),var(--teal),var(--violet),var(--coral));background-size:300% 100%;animation:rb 10s linear infinite;box-shadow:0 8px 0 rgba(0,0,0,.35)}
+.ribbon div{display:flex;gap:46px;width:max-content;animation:mq 26s linear infinite;font:400 38px/1.1 var(--mk);color:#1a1230;white-space:nowrap}
+@keyframes rb{to{background-position:300% 0}}@keyframes mq{to{translate:-50% 0}}
+#story{padding-block:90px}
+.eq{display:flex;align-items:center;justify-content:center;gap:clamp(12px,4vw,48px);margin-top:60px;flex-wrap:wrap}
+.eq div{text-align:center}.eq svg{width:clamp(90px,16vw,150px);height:auto;stroke-width:3}
+.eq p{margin:6px 0 0;font:400 30px var(--mk);color:var(--chalk)}
+.eq b{font:400 clamp(44px,7vw,80px) var(--mk);color:var(--amber);rotate:-6deg}
+.snd{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:80;display:flex;align-items:center;gap:8px;background:#120f26;color:var(--chalk);border:3px dashed var(--teal);border-radius:20px 12px 22px 14px;padding:8px 16px 8px 10px;font:400 22px/1 var(--mk);cursor:pointer;rotate:-2deg;transition:rotate .25s,border-color .25s}
+.snd:hover{rotate:2deg;border-color:var(--amber)}
+.snd svg{width:30px;height:30px;stroke:var(--teal);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.snd .wv{opacity:0;transition:opacity .3s}.snd[aria-pressed=true] .wv{opacity:1;animation:tw 1.2s ease-in-out infinite}
+.snd[aria-pressed=true] .x,.snd[aria-pressed=true] .hint{display:none}
+.snd .hint{position:absolute;right:6px;bottom:100%;margin-bottom:12px;white-space:nowrap;background:#fff3b0;color:var(--ink);padding:6px 14px;font:400 22px var(--pen);border-radius:4px;rotate:2deg;box-shadow:3px 4px 0 rgba(0,0,0,.4);animation:hint 9s 1.5s both}
+@keyframes hint{0%{opacity:0;translate:0 10px}8%,85%{opacity:1;translate:0 0}100%{opacity:0;translate:0 -8px}}
+@media (prefers-reduced-motion:reduce){.snd .hint{display:none}}
+.back{display:inline-block;margin-top:56px;font:400 26px var(--mk);color:var(--teal);text-decoration:none;rotate:-2deg;border-bottom:3px dashed var(--teal);padding-bottom:2px;transition:rotate .25s,color .25s,translate .25s,border-color .25s}
+.back:hover{color:var(--amber);border-color:var(--amber);rotate:2deg;translate:0 -4px}
+.fnav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-bottom:8px}
+.fnav a{color:var(--chalk);text-decoration:none;font-size:26px;transition:color .2s,rotate .2s;display:inline-block}.fnav a:hover{color:var(--coral);rotate:-4deg}
+footer .back{margin:18px 0 22px}.fine{font-size:22px}
+#who,#case,#numbers,#love,#team,#faq{padding-block:90px}
+.chips{display:flex;flex-wrap:wrap;gap:18px;margin-top:50px}
+.chip{display:inline-block;font:400 clamp(24px,3vw,32px) var(--mk);padding:10px 24px;color:var(--c);border:3px dashed var(--c);border-radius:22px 12px 26px 10px/12px 24px 10px 26px;transition:background .3s,color .3s,translate .3s,rotate .3s}
+.chip:hover{background:linear-gradient(110deg,var(--coral),var(--amber),var(--teal));color:#1a1230;border-style:solid;rotate:0deg;translate:0 -6px}
+.case{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:50px;align-items:center;margin-top:70px}
+.steps3{display:grid;gap:28px}.steps3 b{display:block;font:400 36px var(--mk);color:var(--amber)}.steps3 p{margin:4px 0 0;font-size:27px;color:#d6d1ea}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px}
+.stat{text-align:center;padding:30px 12px;border:3px dashed var(--line);border-radius:24px 14px 28px 12px/14px 26px 12px 28px;background:rgba(18,15,38,.6)}
+.stat b{display:block;font:400 clamp(64px,9vw,112px)/1 var(--mk);background:linear-gradient(100deg,var(--coral),var(--amber),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:24px;color:var(--muted);display:block;margin-top:8px}
+.who{margin-top:16px!important;font:400 24px var(--mk)!important;opacity:.8}
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:60px}
+.person{position:relative;text-align:center;padding:30px 22px 26px;border:3px dashed var(--line);border-radius:24px 14px 28px 12px/14px 26px 12px 28px;background:rgba(18,15,38,.6);transition:translate .3s,border-color .3s}
+.person:hover{translate:0 -10px;border-color:var(--teal)}
+.av{width:150px;height:auto;stroke-width:3;margin:0 auto 10px;display:block}
+.person h3{font-size:34px}.person p{margin:6px 0 0;font-size:24px;color:var(--muted)}
+.faq{max-width:860px;margin-top:50px}
+.faq details{border-bottom:3px dashed var(--line);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font:400 clamp(26px,3.4vw,38px)/1.1 var(--mk);transition:color .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;color:var(--coral);font-size:1.3em;transition:rotate .3s,color .3s}
+.faq summary:hover{color:var(--teal)}
+.faq details[open] summary::after{rotate:45deg;color:var(--amber)}
+.faq details p{margin:14px 0 4px;color:var(--muted);font-size:26px;max-width:34em;animation:fade .5s both}
+.brief{max-width:600px;margin:70px auto 0;padding:34px 30px;border:3px dashed var(--line);border-radius:24px 14px 28px 12px/14px 26px 12px 28px;display:grid;gap:16px;text-align:left;background:rgba(18,15,38,.7)}
+.brief h3{font-size:36px}
+.brief input,.brief textarea{width:100%;background:transparent;border:0;border-bottom:3px dashed var(--line);color:var(--chalk);font:400 26px var(--pen);padding:8px 2px;outline:0;resize:none;transition:border-color .25s}
+.brief input:focus,.brief textarea:focus{border-color:var(--teal)}
+.brief ::placeholder{color:#7d77a0}
+button.btn{border:0;cursor:pointer}.brief .btn{justify-self:start}
+@media (max-width:860px){.case,.people{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+/* readability pass */
+:root{--muted:#d3cee9}
+body{font-size:22px;line-height:1.55;letter-spacing:.012em;word-spacing:.06em}
+.lead{font-size:25px;line-height:1.5}
+.hero p{font-size:26px}.tag{font-size:23px}.nav a{font-size:22px}
+.note p{font-size:22px}.pol p{font-size:21px}.plan li{font-size:22px}
+.small,.note-s{font-size:21px}.cap{font-size:22px}
+.steps p{font-size:22px}.stat span{font-size:22px}.person p{font-size:22px}
+.steps3 p{font-size:24px}.faq details p{font-size:23px;line-height:1.55}
+.fnav a{font-size:24px}.fine{font-size:20px}footer{font-size:21px}
+.tc{font-size:20px}.poster{font-size:19px}
+.brief input,.brief textarea{font-size:23px}.snd .hint{font-size:21px}
+.brief ::placeholder{color:#a29cc4}
+mark{background-image:linear-gradient(100deg,rgba(255,200,87,.36),rgba(255,107,139,.3))}
+@media (min-width:1360px){.deco{display:block}}
+@media (max-width:1000px){.proof{grid-template-columns:1fr}.mid{max-width:200px;margin:44px auto;rotate:90deg}}
+@media (max-width:860px){
+ .notes,.work,.plans,.steps,.about{grid-template-columns:1fr}
+ .hero{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto}.hero-body{grid-row:2}.hero-art{grid-column:1;grid-row:3;max-width:340px;margin:10px auto 24px}.tc{grid-row:4}.nav a,.cta .ptr,.wave{display:none}
+ section{padding:76px 0}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .js [data-w] i{opacity:1!important;transform:none!important}.js .rv{opacity:1;translate:none}
+ .js .dr *{stroke-dasharray:none!important;stroke-dashoffset:0!important}.mp,.num{opacity:1;transform:none}.final{clip-path:none}
+}
+</style>
+</head>
+<body>
+<div class="prog"></div>
+<div class="glow"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+ <symbol id="st" viewBox="0 0 24 24"><path d="M12 2l3 8 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z"/></symbol>
+ <symbol id="sk" viewBox="0 0 24 24"><path d="M12 2v7M12 15v7M2 12h7M15 12h7"/></symbol>
+ <symbol id="sr" viewBox="0 0 24 24"><path d="M12 12a2 2 0 0 1 4 0a5 5 0 0 1-10 0a8 8 0 0 1 16 0a11 11 0 0 1-22 0"/></symbol>
+ <symbol id="bl" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 1 4 10v3H8v-3a6 6 0 0 1 4-10zM9 19h6M10 22h4"/></symbol>
+ <symbol id="ht" viewBox="0 0 24 24"><path d="M12 21C3 14 3 6 8 5c2-.5 3.500 1 4 2 .5-1 2-2.500 4-2 5 1 5 9-4 16z"/></symbol>
+</svg>
+
+<header class="hero" id="top">
+  <div class="spot"></div>
+  <svg class="hero-art art" viewBox="0 0 520 560" aria-hidden="true">
+    <g class="dr">
+      <path class="c3" d="M10 480 L80 370 L120 420 L175 330 L250 480"/>
+      <path class="c3" d="M175 330 L192 358 L173 352 L158 366"/>
+      <path class="c4" d="M300 480 L360 400 L400 450 L450 390 L490 480"/>
+      <path class="c2" d="M420 70 a48 48 0 1 0 38 78 a38 38 0 1 1 -38 -78z"/>
+      <path class="c5" d="M110 225 q0-12 12-12 h175 q12 0 12 12 v118 q0 12-12 12 h-175 q-12 0-12-12z"/>
+      <circle class="c1" cx="215" cy="288" r="42"/><circle class="c1" cx="215" cy="288" r="22"/>
+      <circle class="c2" cx="150" cy="160" r="38"/><circle class="c2" cx="238" cy="150" r="44"/>
+      <path class="c5" d="M215 355 L150 460 M215 355 L222 470 M215 355 L290 460"/>
+      <path class="c1" d="M262 280 L440 225 M262 295 L450 295 M262 310 L440 370"/>
+      <path class="c4" d="M44 260 c25-34 70-22 56 12 c-12 28-52 14-40-12 c6-14 30-12 28 0"/>
+    </g>
+    <g class="late"><g class="spin"><path class="c2" d="M150 130v60M120 160h60M129 139l42 42M171 139l-42 42"/></g><g class="spin" style="animation-direction:reverse"><path class="c2" d="M238 116v68M204 150h68M214 126l48 48M262 126l-48 48"/></g></g>
+    <g class="cloud c5"><path d="M60 60 q10-24 34-14 q14-20 36 0 q24-4 22 18 h-96 q-6-4 4-4z"/></g>
+    <g class="bird c5"><path d="M0 60 q8-12 16 0 q8-12 16 0"/></g>
+    <g class="bird c5" style="--bd:-4s"><path d="M0 110 q6-9 12 0 q6-9 12 0"/></g>
+    <g class="tw c2"><path d="M70 100v26M57 113h26"/></g><g class="tw c1" style="animation-delay:.8s"><path d="M440 270v22M429 281h22"/></g><g class="tw c3" style="animation-delay:1.5s"><path d="M52 340v20M42 350h20"/></g>
+    <text class="hw" x="30" y="530">lights, camera, AI!</text>
+  </svg>
+  <nav class="nav"><b><svg class="logo art dr" viewBox="0 0 40 40"><path class="c1" d="M6 8h28q2 0 2 2v20q0 2-2 2H6q-2 0-2-2V10q0-2 2-2z"/><path class="c2" d="M16 15l10 5-10 5z"/><path class="c3" d="M2 2h8M2 2v8"/></svg>Handframe</b><div><a href="#work">Work</a><a href="#proof">Accuracy</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div></nav>
+  <div class="hero-body">
+    <div class="tag tp">Handmade AI films · Dehradun</div>
+    <h1 data-w="c">Films your camera crew couldn’t shoot.</h1>
+    <p data-w="w">AI-powered video ads and brand stories for hotels, restaurants, real estate and events, built from your <mark>real photos</mark>.</p>
+    <div class="btns"><a class="btn fill" href="#contact">Get a free sample</a><a class="btn line" href="#work">See the work</a></div>
+  </div>
+  <div class="tc" id="tc">00:00:00:00</div>
+</header>
+<div class="strip" aria-hidden="true"><div></div></div>
+
+<section id="story">
+  <div class="wrap">
+    <h2 data-w="c">AI is the pencil. We’re the hands.</h2>
+    <p class="lead" data-w="w">Handframe is a small team that crafts AI with our own hands. The tools are fast, but the <mark>story, the taste and every frame</mark> are made by people, so your video feels like you and not like a machine.</p>
+    <div class="eq rv">
+      <div><svg class="art dr c1" viewBox="0 0 100 100"><path d="M32 88Q22 68 18 54Q16 46 24 46Q29 46 32 54V22Q32 15 38 15T44 22V44V14Q44 7 50 7T56 14V44V20Q56 13 62 13T68 20V52Q74 44 80 48Q84 52 78 62Q72 76 64 88z"/></svg><p>our hands</p></div>
+      <b>+</b>
+      <div><svg class="art dr c3" viewBox="0 0 100 100"><path d="M30 30h40v40H30z"/><path d="M42 42h16v16H42z"/><path d="M40 22v8M50 22v8M60 22v8M40 70v8M50 70v8M60 70v8M22 40h8M22 50h8M22 60h8M70 40h8M70 50h8M70 60h8"/><path class="c2" d="M86 8v14M79 15h14"/></svg><p>AI tools</p></div>
+      <b>=</b>
+      <div><svg class="art dr c2" viewBox="0 0 100 100"><path d="M10 22h80v56H10z"/><path d="M10 34h80M10 66h80"/><path d="M24 22v12M40 22v12M56 22v12M72 22v12M24 66v12M40 66v12M56 66v12M72 66v12"/><path class="c1" d="M42 40l22 10-22 10z"/></svg><p>your story</p></div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="services">
+  <svg class="deco" style="right:3%;top:50px;--sp:-.06" viewBox="0 0 24 24"><use href="#sr"/></svg>
+  <div class="wrap">
+    <h2 data-w="c">One studio, idea to finished video.</h2>
+    <p class="lead" data-w="w">We’re a small creative team in Dehradun. We mix AI video tools with <mark>real editing</mark>, sound and colour, so it looks like your brand and not a random AI clip.</p>
+    <div class="notes">
+      <div class="note tp rv" style="--p:#fff3b0;--rt:-3deg"><svg class="ic art dr" viewBox="0 0 64 64"><path d="M20 8h24q4 0 4 4v40q0 4-4 4H20q-4 0-4-4V12q0-4 4-4z"/><path d="M28 26l12 8-12 8z"/><path d="M52 10v8M48 14h8"/></svg><h3>AI reels and ads</h3><p>15 to 30 second videos for Instagram and YouTube, made from your product, food or property photos.</p></div>
+      <div class="note tp rv" style="--p:#ffc2d1;--rt:2deg;--d:1"><svg class="ic art dr" viewBox="0 0 64 64"><path d="M8 26h48v28H8z"/><path d="M8 26l4-14h48l-4 14"/><path d="M22 12l-4 14M34 12l-4 14M46 12l-4 14"/><path d="M20 40h24"/></svg><h3>Brand story films</h3><p>A 45 to 60 second cinematic film with script, visuals, voiceover and music for launches and festivals.</p></div>
+      <div class="note tp rv" style="--p:#b8f2e6;--rt:-2deg;--d:2"><svg class="ic art dr" viewBox="0 0 64 64"><path d="M10 16h44v38H10z"/><path d="M10 28h44M22 8v14M42 8v14"/><path d="M20 41l6 6 12-12"/></svg><h3>Monthly content</h3><p>A steady plan of reels, posters and captions, so your page always has something fresh to post.</p></div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="who">
+  <div class="wrap">
+    <h2 data-w="c">Made for businesses like yours.</h2>
+    <p class="lead" data-w="w">If you have a place, a product or an event worth showing off, we can turn it into a film.</p>
+    <div class="chips">
+      <span class="chip rv" style="--c:var(--coral);--rt:-2deg">Hotels and resorts</span>
+      <span class="chip rv" style="--c:var(--amber);--rt:1.5deg;--d:1">Cafes and restaurants</span>
+      <span class="chip rv" style="--c:var(--teal);--rt:-1deg;--d:2">Real estate</span>
+      <span class="chip rv" style="--c:var(--violet);--rt:2deg;--d:3">Festivals and events</span>
+      <span class="chip rv" style="--c:var(--teal);--rt:1deg">Coaching and schools</span>
+      <span class="chip rv" style="--c:var(--coral);--rt:-2.5deg;--d:1">Clinics and wellness</span>
+      <span class="chip rv" style="--c:var(--violet);--rt:1deg;--d:2">Fashion and salons</span>
+      <span class="chip rv" style="--c:var(--amber);--rt:-1.5deg;--d:3">Tourism and travel</span>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="work">
+  <svg class="deco" style="left:3%;top:90px;--c:var(--teal);--sp:-.04" viewBox="0 0 24 24"><use href="#st"/></svg>
+  <div class="wrap">
+    <h2 data-w="c">Selected work</h2>
+    <p class="lead" data-w="w">Concept pieces made to show what’s possible. Each one starts from real reference photos.</p>
+    <div class="scrawl rv" style="--d:2"><span>real videos<br>go here soon!</span><svg class="art dr" viewBox="0 0 90 70"><path d="M78 6C58 8 30 22 14 54"/><path d="M14 54l-3-16M14 54l15-8"/></svg></div>
+    <div class="work">
+      <!-- To add a video: replace the .poster div with a <video> or an embed. -->
+      <article class="pol tp rv" style="--rt:-3deg"><div class="poster g1"><span>Concept · 25 sec</span><div class="play"></div></div><h3>Hill-station hotel ad</h3><p>Lobby, room and pool brought to life from 10 photos.</p></article>
+      <article class="pol tp rv" style="--rt:2.5deg;--d:1"><div class="poster g2"><span>Concept · 20 sec</span><div class="play"></div></div><h3>Cafe food film</h3><p>Steam, pour and plating shots for a Rajpur Road cafe.</p></article>
+      <article class="pol tp rv" style="--rt:-1.5deg;--d:2"><div class="poster g3"><span>Concept · 30 sec</span><div class="play"></div></div><h3>Property walkthrough</h3><p>A villa shown at golden hour, before the building is finished.</p></article>
+      <article class="pol tp rv" style="--rt:2deg"><div class="poster g4"><span>Concept · 30 sec</span><div class="play"></div></div><h3>Festival promo</h3><p>A Diwali campaign with a cinematic story arc.</p></article>
+      <article class="pol tp rv" style="--rt:-2.5deg;--d:1"><div class="poster g5"><span>Concept · 60 sec</span><div class="play"></div></div><h3>Brand story film</h3><p>A founder’s journey told in six scenes.</p></article>
+      <article class="pol tp rv" style="--rt:3deg;--d:2"><div class="poster g6"><span>Hybrid · 20 sec</span><div class="play"></div></div><h3>Real footage + AI VFX</h3><p>Shot on a phone, finished with AI scenes and sound design.</p></article>
+    </div>
+    <p class="note-s rv">These are concept pieces, not paid client work. Client projects will be added here as they are delivered.</p>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="case">
+  <div class="wrap">
+    <h2 data-w="c">A closer look</h2>
+    <p class="lead" data-w="w">One concept, from a few photos to a finished film. Every Handframe project is built this way.</p>
+    <div class="case">
+      <article class="pol tp rv" style="--rt:-2deg"><div class="poster g1"><span>Concept · 25 sec</span><div class="play"></div></div><h3>Hill-station hotel ad</h3><p>A concept piece, not a paid project.</p></article>
+      <div class="steps3">
+        <div class="rv"><b>The brief</b><p>A small hotel with lovely rooms but flat, static photos on Instagram.</p></div>
+        <div class="rv" style="--d:1"><b>What we made</b><p>A 25 second cinematic ad built from 10 real photos, with camera moves, music and captions.</p></div>
+        <div class="rv" style="--d:2"><b>Why it works</b><p>It looks like the real place, feels like a film, and can be cut into several reels.</p></div>
+      </div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="proof">
+  <svg class="deco" style="right:3%;top:80px;--c:var(--coral);--sp:-.05" viewBox="0 0 24 24"><use href="#bl"/></svg>
+  <div class="wrap">
+    <h2 data-w="c">It should look like your place.</h2>
+    <p class="lead" data-w="w">Every video starts from your <mark>real photos</mark>, and you approve a preview before the final render.</p>
+    <div class="proof rv">
+      <div><div class="refs">
+        <div class="mp" style="--k:0;rotate:-8deg"><i style="--c:linear-gradient(135deg,#3a2a7a,#6d4aff)"></i></div>
+        <div class="mp" style="--k:1;rotate:3deg"><i style="--c:linear-gradient(135deg,#7a2a4a,#ff6b8b)"></i></div>
+        <div class="mp" style="--k:2;rotate:-4deg"><i style="--c:linear-gradient(135deg,#1a5a5a,#4de1d0)"></i></div>
+      </div><p class="cap">your photos</p></div>
+      <svg class="mid art dr" viewBox="0 0 200 120"><path class="c2" d="M8 90C50 10 120 10 182 62"/><path class="c2" d="M182 62l-18-2M182 62l-8 17"/><path class="c1" d="M96 24v14M89 31h14"/><text class="hw2" x="48" y="112">AI magic</text></svg>
+      <div><div class="tv"><div class="final"></div></div><p class="cap">your finished video</p></div>
+    </div>
+    <p class="note-s rv">Replace the coloured boxes with real before and after images from your best piece.</p>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div><span>hotels</span><span>✦</span><span>cafes</span><span>✦</span><span>real estate</span><span>✦</span><span>festivals</span><span>✦</span><span>brands</span><span>✦</span><span>hotels</span><span>✦</span><span>cafes</span><span>✦</span><span>real estate</span><span>✦</span><span>festivals</span><span>✦</span><span>brands</span><span>✦</span></div></div>
+
+<section id="numbers">
+  <div class="wrap">
+    <h2 data-w="c">Handframe in numbers</h2>
+    <div class="stats rv">
+      <div class="stat"><b data-to="7">7</b><span>working days, at most, for a reel</span></div>
+      <div class="stat"><b data-to="2">2</b><span>revision rounds in every project</span></div>
+      <div class="stat"><b data-to="10">10</b><span>photos are usually all we need</span></div>
+      <div class="stat"><b data-to="0">0</b><span>camera crews to book</span></div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="pricing">
+  <svg class="deco" style="left:4%;top:70px;--c:var(--violet);--sp:-.05" viewBox="0 0 24 24"><use href="#sk"/></svg>
+  <div class="wrap">
+    <h2 data-w="c">Simple pricing, starting small.</h2>
+    <p class="lead" data-w="w">Start with one reel or ad, then move to a monthly plan when you see it working.</p>
+    <div class="plans">
+      <div class="plan rv" style="--rt:-1.5deg"><h3>Starter</h3><div class="p">from ₹15,000/mo</div><ul><li>4 reels a month</li><li>Content calendar</li><li>Posting on 1 platform</li></ul></div>
+      <div class="plan rv" style="--rt:1deg;--d:1"><b class="stk">most picked ★</b><h3>Growth</h3><div class="p">from ₹30,000/mo</div><ul><li>8 reels, 2 premium</li><li>Posters and captions</li><li>2 platforms and monthly report</li></ul></div>
+      <div class="plan rv" style="--rt:-1deg;--d:2"><h3>Premium</h3><div class="p">from ₹60,000/mo</div><ul><li>12 reels, 4 premium</li><li>A brand film every quarter</li><li>Ad creatives and strategy call</li></ul></div>
+    </div>
+    <p class="small rv">One-time projects: AI reel from ₹4,000 · Hybrid ad from ₹12,000 · Brand story film from ₹30,000. Ad spend on Instagram or Google is paid separately.</p>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <h2 data-w="c">How a project works</h2>
+    <div class="steps rv">
+      <svg class="wave art dr c1" viewBox="0 0 1000 40" preserveAspectRatio="none"><path d="M0 20Q125-8 250 20T500 20T750 20T1000 20"/></svg>
+      <div><b class="num" style="--k:0;--c:var(--coral)">1</b><h3>Brief</h3><p>You tell us what you sell and who you want to reach, and share photos and your logo.</p></div>
+      <div><b class="num" style="--k:1;--c:var(--amber)">2</b><h3>Preview</h3><p>We send a short preview and script. You check that every detail is accurate.</p></div>
+      <div><b class="num" style="--k:2;--c:var(--teal)">3</b><h3>Edit</h3><p>We finish with sound, colour and captions. Two revision rounds are included.</p></div>
+      <div><b class="num" style="--k:3;--c:var(--violet)">4</b><h3>Deliver</h3><p>You get files for Instagram, YouTube and WhatsApp in 5 to 7 working days.</p></div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="love">
+  <div class="wrap">
+    <h2 data-w="c">Kind words</h2>
+    <p class="lead" data-w="w">We’re just getting started, so the first notes on this wall will come from our first clients.</p>
+    <div class="notes">
+      <div class="note tp rv" style="--p:#fff3b0;--rt:-2deg"><h3>★★★★★</h3><p>“Replace this with a real client quote. Keep it short and honest.”</p><p class="who">— Client name, Business</p></div>
+      <div class="note tp rv" style="--p:#b8f2e6;--rt:2deg;--d:1"><h3>★★★★★</h3><p>“Replace this with a real client quote. Say what changed for them.”</p><p class="who">— Client name, Business</p></div>
+      <div class="note tp rv" style="--p:#ffc2d1;--rt:-1.5deg;--d:2"><h3>★★★★★</h3><p>“Replace this with a real client quote. Add a result if you have one.”</p><p class="who">— Client name, Business</p></div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <h2 data-w="c">The hands behind it</h2>
+    <p class="lead" data-w="w">A small team of editors, AI artists and storytellers in Dehradun.</p>
+    <div class="people">
+      <div class="person rv"><svg class="av art dr c5" viewBox="0 0 120 130"><circle cx="60" cy="62" r="32"/><circle cx="49" cy="60" r="2.5"/><circle cx="71" cy="60" r="2.5"/><path d="M48 76q12 10 24 0"/><path class="c1" d="M26 58q0-42 34-42t34 42q-16-16-34-16t-34 16z"/><path d="M20 126q6-34 40-34t40 34"/></svg><h3>Team member</h3><p>Role, for example director and editor</p></div>
+      <div class="person rv" style="--d:1"><svg class="av art dr c5" viewBox="0 0 120 130"><circle cx="60" cy="62" r="32"/><circle cx="49" cy="60" r="2.5"/><circle cx="71" cy="60" r="2.5"/><path d="M48 76q12 10 24 0"/><path class="c3" d="M25 84V56q0-40 35-40t35 40v28M25 56q35-8 70 0"/><path d="M20 126q6-34 40-34t40 34"/></svg><h3>Team member</h3><p>Role, for example AI artist</p></div>
+      <div class="person rv" style="--d:2"><svg class="av art dr c5" viewBox="0 0 120 130"><circle cx="60" cy="62" r="32"/><circle cx="49" cy="60" r="2.5"/><circle cx="71" cy="60" r="2.5"/><path d="M48 76q12 10 24 0"/><path class="c4" d="M24 62q-4-46 36-46t36 46M22 56v22M98 56v22"/><path d="M20 126q6-34 40-34t40 34"/></svg><h3>Team member</h3><p>Role, for example sound and colour</p></div>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 data-w="c">Questions, answered</h2>
+    <div class="faq rv">
+      <details><summary>Do you really make videos without shooting?</summary><p>For most projects, yes. We start from your real photos and use AI tools to add motion, camera moves and scenes. If you want real footage in the mix, we can combine both.</p></details>
+      <details><summary>Will it look like my real place or product?</summary><p>That’s our main focus. We start from your photos, you approve a preview before the final render, and we check details like your logo, signs and layout.</p></details>
+      <details><summary>What do you need from us?</summary><p>5 to 10 clear photos, your logo, and a few lines about what you want to say. Good light matters more than a fancy camera.</p></details>
+      <details><summary>How long does a project take?</summary><p>A reel takes about 5 to 7 working days, and a brand film takes 10 to 15, depending on how fast you send feedback.</p></details>
+      <details><summary>How many revisions do we get?</summary><p>Two rounds are included with every deliverable. Extra rounds are charged at a small fixed fee.</p></details>
+      <details><summary>Do you also post and manage our social media?</summary><p>Yes. Our monthly plans cover the content calendar, reels, captions and posting. Ad spend on Instagram or Google is paid separately.</p></details>
+      <details><summary>How do payments work?</summary><p>50% in advance to start, and the rest on delivery. Monthly plans are paid in advance.</p></details>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <svg class="deco" style="right:3%;top:60px;--c:var(--coral);--sp:-.04" viewBox="0 0 24 24"><use href="#ht"/></svg>
+  <svg class="fly art c5" viewBox="0 0 60 40"><path d="M2 20L58 2 40 38 28 24zM28 24L58 2"/></svg>
+  <svg class="fly b art c3" viewBox="0 0 60 40"><path d="M2 20L58 2 40 38 28 24zM28 24L58 2"/></svg>
+  <div class="wrap">
+    <h2 data-w="c">Let’s make something unforgettable.</h2>
+    <p class="lead" data-w="w">Send us 5 to 10 photos of your place or product, and we’ll make you a short <mark>free sample</mark>.</p>
+    <div class="btns rv" style="--d:1">
+      <div class="cta"><a class="btn fill" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+        <svg class="ring art dr c2" viewBox="0 0 300 100" preserveAspectRatio="none"><path d="M24 52C8 14 120 2 200 10S296 40 280 70 120 98 40 84 8 40 62 22"/></svg>
+        <svg class="ptr art dr" viewBox="0 0 130 70"><path d="M122 8C90 2 50 20 20 56"/><path d="M20 56l2-16M20 56l15-6"/></svg></div>
+      <a class="btn line" href="mailto:your@email.com">Send an email</a>
+    </div>
+    <div class="brief rv" style="--d:2">
+      <h3>Or tell us in three lines</h3>
+      <input id="fn" placeholder="Your name" autocomplete="name">
+      <input id="fb" placeholder="Your business (hotel, cafe, school…)">
+      <textarea id="fw" rows="2" placeholder="What would you like us to make?"></textarea>
+      <button class="btn fill" id="go" type="button">Send on WhatsApp</button>
+    </div>
+    <a class="back" href="#top">↑ back to menu</a>
+  </div>
+</section>
+<footer><nav class="fnav"><a href="#story">Story</a><a href="#services">Services</a><a href="#work">Work</a><a href="#proof">Accuracy</a><a href="#pricing">Pricing</a><a href="#process">Process</a><a href="#team">Team</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav><a class="back" href="#top">↑ back to top</a><div class="fine">Handframe · Rajpur Road, Dehradun · Instagram: @yourhandle · made by hand, with a little AI</div></footer>
+
+<button class="snd" aria-pressed="false" aria-label="Turn sound on or off"><span class="hint">turn sound on ♪</span><svg viewBox="0 0 40 40"><path d="M6 15h7l9-8v26l-9-8H6z"/><path class="wv" d="M28 14q5 6 0 12M33 9q9 11 0 22"/><path class="x" d="M27 14l10 12M37 14L27 26"/></svg><span class="lb">sound off</span></button>
+<script>
+document.documentElement.classList.add("js");
+(function(){
+  var K={c:0};
+  function sp(n,m){[].slice.call(n.childNodes).forEach(function(ch){
+    if(ch.nodeType===3){var f=document.createDocumentFragment();
+      ch.textContent.split(/(\s+)/).forEach(function(w){if(!w)return;
+        if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(w));return}
+        var wd=document.createElement("span");wd.className="wd";
+        (m==="c"?w.split(""):[w]).forEach(function(s){var i=document.createElement("i");i.textContent=s;i.style.setProperty("--k",K.c++);
+          var k=m==="c"?1:.3;i.style.setProperty("--r",((Math.random()*2.8-1.4)*k).toFixed(1)+"deg");i.style.setProperty("--y",((Math.random()*.08-.04)*k).toFixed(2)+"em");wd.appendChild(i)});
+        f.appendChild(wd)});
+      ch.replaceWith(f)}
+    else if(ch.nodeType===1&&ch.tagName!=="BR")sp(ch,m)})}
+  document.querySelectorAll("[data-w]").forEach(function(e){K.c=0;sp(e,e.dataset.w)});
+  document.querySelectorAll(".dr").forEach(function(g){g.querySelectorAll("path,circle,line,rect,ellipse").forEach(function(e,i){e.setAttribute("pathLength","1");e.style.setProperty("--n",i)})});
+  var S=(function(){var ctx,nb,on=false,m;
+  function init(){if(ctx)return;var A=window.AudioContext||window.webkitAudioContext;if(!A)return;ctx=new A();m=ctx.createGain();m.gain.value=.55;m.connect(ctx.destination);var n=ctx.sampleRate,d;nb=ctx.createBuffer(1,n,n);d=nb.getChannelData(0);for(var i=0;i<n;i++)d[i]=Math.random()*2-1}
+  function T(d){return ctx.currentTime+(d||0)}
+  function ns(d,du,ty,a,b,v,q){var s=ctx.createBufferSource(),f=ctx.createBiquadFilter(),g=ctx.createGain(),t=T(d);s.buffer=nb;f.type=ty;f.Q.value=q||1;f.frequency.setValueAtTime(a,t);f.frequency.exponentialRampToValueAtTime(b,t+du);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+du*.25);g.gain.exponentialRampToValueAtTime(.0001,t+du);s.connect(f);f.connect(g);g.connect(m);s.start(t,Math.random()*.5);s.stop(t+du+.05)}
+  function tn(d,ty,a,b,du,v){var o=ctx.createOscillator(),g=ctx.createGain(),t=T(d);o.type=ty;o.frequency.setValueAtTime(a,t);o.frequency.exponentialRampToValueAtTime(b,t+du);g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(v,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+du);o.connect(g);g.connect(m);o.start(t);o.stop(t+du+.05)}
+  var Z={
+   scribble:function(d){for(var i=0;i<6;i++)ns(d+i*.07,.07,"bandpass",3000+Math.random()*2000,2200+Math.random()*1500,.2,2)},
+   pop:function(d){tn(d,"sine",260,640,.13,.4);ns(d,.04,"highpass",2500,5000,.08,1)},
+   click:function(d){ns(d,.03,"highpass",3000,6000,.35,.7);ns(d+.06,.05,"highpass",1800,900,.3,.7);tn(d,"square",150,60,.08,.1)},
+   whoosh:function(d){ns(d,.35,"lowpass",300,3200,.3,.8)},
+   ding:function(d,i){var f=[660,784,988][i%3];tn(d,"triangle",f,f*.99,.7,.28);tn(d,"sine",f*2,f*1.98,.4,.08)},
+   chime:function(d){[523,659,784,1047].forEach(function(f,i){tn(d+i*.09,"triangle",f,f*.99,.5,.22)})},
+   squeak:function(d){tn(d,"sine",1300,1900,.1,.1)},
+   sweep:function(d){ns(d,.7,"bandpass",800,2800,.2,1.2)},
+   tada:function(d){[523,659,784,1047,1319].forEach(function(f,i){tn(d+i*.08,"triangle",f,f*.99,.6,.24)});ns(d+.3,.5,"highpass",4000,7000,.12,1)},
+   proof:function(d){Z.pop(d);Z.pop(d+.16);Z.pop(d+.32);Z.whoosh(d+.6);Z.chime(d+1.7)},
+   steps:function(d){[330,392,494,587].forEach(function(f,i){tn(d+.4+i*.42,"triangle",f,f*1.4,.22,.3)})}
+  };
+  function enter(el){if(!on)return;var d=(parseFloat(getComputedStyle(el).getPropertyValue("--d"))||0)*.12;
+   if(el.matches(".note"))Z.pop(d);else if(el.matches(".pol"))Z.click(d);else if(el.matches(".plan"))Z.ding(d,[].indexOf.call(el.parentNode.children,el));
+   else if(el.matches(".proof"))Z.proof(0);else if(el.matches(".steps"))Z.steps(0);else if(el.matches(".ribbon"))Z.sweep(0);else if(el.matches(".stats"))Z.steps(0);else if(el.matches(".person"))Z.pop(d);
+   else if(el.matches("#contact h2"))Z.tada(0);else if(el.matches("h1,h2"))Z.scribble(0)}
+  document.addEventListener("pointerover",function(e){if(!on||e.pointerType==="touch")return;var t=e.target.closest&&e.target.closest(".pol,.note,.plan,.btn");if(!t||t.contains(e.relatedTarget))return;
+   if(t.matches(".pol"))Z.whoosh(0);else if(t.matches(".note"))Z.pop(0);else if(t.matches(".plan"))Z.ding(0,[].indexOf.call(t.parentNode.children,t));else Z.squeak(0)});
+  document.addEventListener("click",function(e){if(on&&e.target.closest&&e.target.closest(".btn"))Z.pop(0)});
+  document.addEventListener("toggle",function(e){if(on&&e.target.open)Z.pop(0)},true);
+  var sb=document.querySelector(".snd");
+  sb.addEventListener("click",function(){init();if(!ctx)return;if(ctx.state==="suspended")ctx.resume();on=!on;sb.setAttribute("aria-pressed",on);sb.querySelector(".lb").textContent=on?"sound on":"sound off";if(on){Z.chime(0);Z.scribble(.5)}});
+  return{enter:enter}})();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");S.enter(e.target);io.unobserve(e.target)}})},{threshold:.2});
+  document.querySelectorAll(".rv,[data-w],.ribbon").forEach(function(e){io.observe(e)});
+  var hero=document.querySelector(".hero"),last=0,cols=["#ff6b8b","#ffc857","#4de1d0","#9a7bff","#f6f1e7"];
+  hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px");hero.style.setProperty("--nx",(((e.clientX-r.left)/r.width-.5)*2).toFixed(2));hero.style.setProperty("--ny",(((e.clientY-r.top)/r.height-.5)*2).toFixed(2))});
+  if(!matchMedia("(prefers-reduced-motion:reduce)").matches)window.addEventListener("pointermove",function(e){
+    if(e.pointerType==="touch"||e.timeStamp-last<40)return;last=e.timeStamp;var d=document.createElement("span");d.className="dust";
+    d.style.cssText="left:"+e.clientX+"px;top:"+e.clientY+"px;background:"+cols[Math.random()*5|0]+";--dx:"+(Math.random()*40-20)+"px";document.body.appendChild(d);setTimeout(function(){d.remove()},900)});
+  document.querySelectorAll(".note,.pol,.plan,.person").forEach(function(e){e.classList.add("hv");e.addEventListener("pointermove",function(ev){var r=e.getBoundingClientRect(),x=ev.clientX-r.left,y=ev.clientY-r.top;e.style.setProperty("--x",x+"px");e.style.setProperty("--y",y+"px");e.style.setProperty("--tx",((x/r.width-.5)*10).toFixed(1)+"deg");e.style.setProperty("--ty",((.5-y/r.height)*8).toFixed(1)+"deg")})});
+  var gl=document.querySelector(".glow");
+  if(gl&&matchMedia("(pointer:fine)").matches){var gx=0,gy=0,tx=0,ty=0,go=false;
+    addEventListener("pointermove",function(e){tx=e.clientX;ty=e.clientY;gl.classList.add("on");if(!go){go=true;gx=tx;gy=ty;(function l(){gx+=(tx-gx)*.14;gy+=(ty-gy)*.14;gl.style.setProperty("--gx",gx+"px");gl.style.setProperty("--gy",gy+"px");requestAnimationFrame(l)})()}});
+    document.documentElement.addEventListener("mouseleave",function(){gl.classList.remove("on")})}
+  document.querySelectorAll("[data-to]").forEach(function(n){n.textContent="0"});
+  var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);var n=e.target,to=+n.dataset.to,a=performance.now();(function f(t){var q=Math.min(1,(t-a)/1400);n.textContent=Math.round(to*(1-Math.pow(1-q,3)));if(q<1)requestAnimationFrame(f)})(a)})},{threshold:.6});
+  document.querySelectorAll("[data-to]").forEach(function(n){co.observe(n)});
+  var go=document.getElementById("go");
+  if(go)go.addEventListener("click",function(){function v(i){return document.getElementById(i).value.trim()}var msg="Hi Handframe! I\u2019m "+(v("fn")||"a new client")+" from "+(v("fb")||"my business")+". I\u2019d like: "+(v("fw")||"a sample video")+".";window.open("https://wa.me/91XXXXXXXXXX?text="+encodeURIComponent(msg),"_blank","noopener")});
+  var t=0,root=document.documentElement;
+  function sc(){t=0;var y=scrollY;root.style.setProperty("--sy",y);root.style.setProperty("--p",(y/Math.max(1,root.scrollHeight-innerHeight)).toFixed(3))}
+  addEventListener("scroll",function(){if(!t)t=requestAnimationFrame(sc)},{passive:true});sc();
+  var tc=document.getElementById("tc"),f=0;function p(n){return String(n).padStart(2,"0")}
+  setInterval(function(){f++;var s=Math.floor(f/24);tc.textContent=p(Math.floor(s/3600))+":"+p(Math.floor(s/60)%60)+":"+p(s%60)+":"+p(f%24)},41);
+})();
+</script>
+</body>
+</html>
